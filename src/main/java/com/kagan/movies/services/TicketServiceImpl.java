@@ -14,9 +14,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class TicketServiceImpl implements TicketService {
 
+    @Autowired
     private TicketRepository ticketRepostory;
 
-    @Autowired
     public TicketServiceImpl(TicketRepository ticketRepostory) {
         this.ticketRepostory = ticketRepostory;
     }
@@ -33,9 +33,9 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
-    public String add() {
+    public String add(Ticket ticket) {
         // TODO Auto-generated method stub
-        return null;
+        return "ok";
     }
 
     @Override

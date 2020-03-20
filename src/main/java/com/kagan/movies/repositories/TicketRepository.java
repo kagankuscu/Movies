@@ -7,7 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * TicketRepostory
  */
-
 public interface TicketRepository extends CrudRepository<Ticket, Long> {
 
 }
