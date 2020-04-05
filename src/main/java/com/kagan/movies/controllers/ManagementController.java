@@ -30,28 +30,24 @@ public class ManagementController {
     @GetMapping("get")
     public String getTicketById(Model model) {
         return "404";
-        // return "edit";
-    }
-
-    @PostMapping(path = "add")
-    public String add(@ModelAttribute Ticket ticket) {
-        // ticketService.add(ticket);
-        return "redirect:/management";
     }
 
     @GetMapping("add")
     public String add(Model model) {
+        model.addAttribute("ticket", new Ticket());
         return "add";
     }
-
-    @GetMapping("save")
-    public String save(Model model) {
+    
+    @PostMapping("add")
+    public String add(@ModelAttribute Ticket ticket, Model model) {
+        model.addAttribute("ticket", ticket);
+        ticketService.add(ticket);
         return "redirect:/management";
     }
 
-    @GetMapping("delete")
-    public String delete(Model model) {
-        return "redirect:/management";
+    @GetMapping("addComment")
+    public String addComment() {
+        return "addComment";
     }
 
 }

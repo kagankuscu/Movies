@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="th='http://www.thymeleaf.org'">
+<div th:insert="fragments/head.html"></div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <div th:insert="fragments/bootstrap.html"></div>
-    <title>Management</title>
-</head>
-
-<body>
     <div class="container">
         <div class="row">
             <div class="col">
@@ -22,33 +13,22 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Number</th>
                             <th scope="col">Subject</th>
-                            <th scope="col"></th>
+                            <th scope="col">Details</th>
+                            <th scope="col">Add Comment</th>
                         </tr>
                     </thead>
-                    <tbody th:if="${tickets} != null">
+                    <tbody>
                         <tr th:each="ticket : ${tickets}">
-                            <th scope="row" th:text="ticket.id"></th>
-                            <td th:text="${ticket.number}"></td>
+                            <th scope="row" th:text="${ticket.id}"></th>
                             <td th:text="${ticket.subject}"></td>
-                            <td><button>s</button></td>
-                        </tr>
-                    </tbody>
-                    <tbody th:unless="${tickets} == null">
-                        <tr>
-                            <th scope="row">
-                            <td>Empty</td>
-                            <td>List</td>
-                            <td><a href="/management/add"><button type="button" class="btn btn-primary">Add</button></a>
-                            </td>
-                            </th>
+                            <td><button>See Details</button></td>
+                            <td><a href="/management/addComment"><button type="button" class="btn btn-info">Add Comment</button></a></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-</body>
-
-</html>
+    
+<div th:insert="fragments/end.html"></div>

@@ -1,10 +1,12 @@
 package com.kagan.movies.models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 /**
@@ -18,11 +20,13 @@ public class TicketUpdate {
     @Column(name = "id")
     private Long id;
 
-    @OneToOne(mappedBy = "number")
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ticket_id", referencedColumnName = "id")
     private Ticket number;
 
     @Column(length = 2000)
-    private String Comment;
+    private String comment;
 
     public Ticket getNumber() {
         return number;
@@ -33,11 +37,11 @@ public class TicketUpdate {
     }
 
     public String getComment() {
-        return Comment;
+        return comment;
     }
 
     public void setComment(String comment) {
-        Comment = comment;
+        this.comment = comment;
     }
 
     public Long getId() {

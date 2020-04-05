@@ -10,8 +10,8 @@ import com.kagan.movies.models.Ticket;
 public interface TicketService {
 
     List<Ticket> listTicket();
-    List<Ticket> getTicketById(int number);
-    String add(Ticket ticket);
+    Ticket getTicketById(Long id);
+    Ticket add(Ticket ticket);
     void save();
     String delete(int number);
 }
