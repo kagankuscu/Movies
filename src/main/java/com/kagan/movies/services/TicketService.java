@@ -11,7 +11,6 @@ public interface TicketService {
 
     List<Ticket> listTicket();
     Ticket getTicketById(Long id);
-    Ticket add(Ticket ticket);
-    void save();
+    Ticket save(Ticket ticket);
     String delete(int number);
 }

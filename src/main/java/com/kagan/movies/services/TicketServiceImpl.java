@@ -23,23 +23,17 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     public List<Ticket> listTicket() {
-        return (List<Ticket>) ticketRepostory.findAll();
+        return ticketRepostory.findAll();
     }
 
     @Override
     public Ticket getTicketById(Long id) {
         return ticketRepostory.findById(id).orElseThrow();
     }
-
+    
     @Override
-    public Ticket add(Ticket ticket) {
+    public Ticket save(Ticket ticket) {
         return ticketRepostory.save(ticket);
-    }
-
-    @Override
-    public void save() {
-        // TODO Auto-generated method stub
-
     }
 
     @Override

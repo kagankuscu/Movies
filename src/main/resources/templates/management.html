@@ -23,7 +23,7 @@
                             <th scope="row" th:text="${ticket.id}"></th>
                             <td th:text="${ticket.subject}"></td>
                             <td><button>See Details</button></td>
-                            <td><a href="/management/addComment"><button type="button" class="btn btn-info">Add Comment</button></a></td>
+                            <td><a th:href="@{'/management/addComment/' + ${ticket.id}}"><button type="button" class="btn btn-info">Add Comment</button></a></td>
                         </tr>
                     </tbody>
                 </table>

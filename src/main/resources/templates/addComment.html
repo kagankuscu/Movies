@@ -5,7 +5,19 @@
             <div th:insert="fragments/navbar.html"></div>
         </div>
     </div>
-    
+    <form action="#" th:action="@{/management/addComment}" th:object="${ticketUpdate}" method="POST">
+        <div class="row">
+
+            <div class="col">Subject:</div>
+            <div class="col">
+                <input type="text" th:field="*{comment}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col"><input type="submit" class="btn btn-success btn-lg btn-block"></div>
+        </div>
+    </form>
+
 </div>
 
 <div th:insert="fragments/end.html"></div>
