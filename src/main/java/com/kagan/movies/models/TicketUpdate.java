@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 
 /**
  * TicketUpdate
@@ -20,7 +21,7 @@ public class TicketUpdate {
     @Column(name = "id")
     private Long id;
 
-
+    @NotNull
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ticket_id", referencedColumnName = "id")
     private Ticket number;
@@ -44,11 +45,11 @@ public class TicketUpdate {
         this.comment = comment;
     }
 
-    public Long getId() {
-        return id;
-    }
+    // public Long getId() {
+    //     return id;
+    // }
 
-    public void setId(Long id) {
-        this.id = id;
-    }    
+    // public void setId(Long id) {
+    //     this.id = id;
+    // }    
 }

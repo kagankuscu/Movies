@@ -8,7 +8,11 @@
     <form action="#" th:action="@{/management/addComment}" th:object="${ticketUpdate}" method="POST">
         <div class="row">
 
-            <div class="col">Subject:</div>
+            <div class="col">Ticket Id:</div>
+            <div class="col">
+                <input type="text" th:field="*{number}">
+            </div>
+            <div class="col">Comment:</div>
             <div class="col">
                 <input type="text" th:field="*{comment}">
             </div>
