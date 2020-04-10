@@ -1,0 +1,30 @@
+<div th:insert="fragments/head.html"></div>
+
+    <div class="container">
+        <div th:insert="fragments/navbar.html"></div>
+        <div class="row">
+            <div class="col">
+                <h1 th:text="Details + ' ' + ${ticketDetails.subject}">Details</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col"></div>
+        </div>
+
+        <div class="row" th:if="${not #lists.isEmpty(ticketDetails.number)}">
+            <div class="col">
+                <ul class="list-group" th:each="ticketDetail : ${ticketDetails.number}">
+                    <li class="list-group-item" th:text="${ticketDetail.comment}"/>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row" th:if="${#lists.isEmpty(ticketDetails.number)}">
+            <div class="col">
+                    <div class="alert alert-warning">Haven't add any comment yet.</div>
+            </div>
+        </div>
+    </div>
+        
+<div th:insert="fragments/end.html"></div>

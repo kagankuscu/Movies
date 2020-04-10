@@ -42,4 +42,9 @@ public class TicketServiceImpl implements TicketService {
         return null;
     }
 
+    @Override
+    public List<Ticket> saveAll(List<Ticket> tickets) {
+        return ticketRepostory.saveAll(tickets);
+    }
+
 }

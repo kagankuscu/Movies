@@ -1,11 +1,13 @@
 package com.kagan.movies.models;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 
 /**
  * Ticket
@@ -18,8 +20,8 @@ public class Ticket {
     @Column(name = "id")
     private Long id;
 
-    @OneToOne(mappedBy = "number")
-    private TicketUpdate number;
+    @OneToMany(mappedBy = "number")
+    private List<TicketUpdate> number;
 
     @Column(length = 2000)
     private String subject;
@@ -32,11 +34,11 @@ public class Ticket {
         this.subject = subject;
     }
 
-    public TicketUpdate getNumber() {
+    public List<TicketUpdate> getNumber() {
         return number;
     }
 
-    public void setNumber(TicketUpdate number) {
+    public void setNumber(List<TicketUpdate> number) {
         this.number = number;
     }
 
