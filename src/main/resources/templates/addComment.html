@@ -5,16 +5,12 @@
             <div th:insert="fragments/navbar.html"></div>
         </div>
     </div>
-    <form action="#" th:action="@{/management/addComment}" th:object="${ticketUpdate}" method="POST">
+    <form action="#" th:action="@{/management/addComment/} + ${id}" th:object="${ticketUpdate}" method="POST">
         <div class="row">
-
-            <div class="col">Ticket Id:</div>
-            <div class="col">
-                <input type="text" th:field="*{number}">
-            </div>
+            <input type="text" th:field="*{number}">
             <div class="col">Comment:</div>
             <div class="col">
-                <input type="text" th:field="*{comment}">
+                <input type="text" th:field="*{comment}" required>
             </div>
         </div>
         <div class="row">

@@ -53,13 +53,14 @@ public class ManagementController {
 
     @GetMapping("addComment/{id}")
     public String addComment(@PathVariable("id") String id, Model model) {
+        model.addAttribute("id", id);
         model.addAttribute("ticketUpdate", new TicketUpdate());
         return "addComment";
     }
 
     
-    @PostMapping("addComment")
-    public String addComment(@ModelAttribute TicketUpdate ticketUpdate, Model model) {
+    @PostMapping("addComment/{id}")
+    public String addComment(@ModelAttribute TicketUpdate ticketUpdate, Model model, @PathVariable("id") Long id) {
         model.addAttribute("ticketUpdate", ticketUpdate);
         ticketUpdateService.save(ticketUpdate);
         return "redirect:/management";
