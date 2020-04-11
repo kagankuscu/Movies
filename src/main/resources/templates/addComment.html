@@ -5,7 +5,9 @@
             <div th:insert="fragments/navbar.html"></div>
         </div>
     </div>
-    <form action="#" th:action="@{/management/addComment/} + ${id}" th:object="${ticketUpdate}" method="POST">
+    <form action="#" th:action="@{/management/addComment
+
+    }" th:object="${ticketUpdate}" method="POST">
         <div class="row">
             <input type="text" th:field="*{number}">
             <div class="col">Comment:</div>

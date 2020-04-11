@@ -39,28 +39,28 @@ public class ManagementController {
     }
 
     @GetMapping("add")
-    public String add(Model model) {
+    public String addGet(Model model) {
         model.addAttribute("ticket", new Ticket());
         return "add";
     }
     
     @PostMapping("add")
-    public String add(@ModelAttribute Ticket ticket, Model model) {
+    public String addPost(@ModelAttribute Ticket ticket, Model model) {
         model.addAttribute("ticket", ticket);
         ticketService.save(ticket);
         return "redirect:/management";
     }
 
     @GetMapping("addComment/{id}")
-    public String addComment(@PathVariable("id") String id, Model model) {
+    public String addCommentGet(@PathVariable("id") String id, Model model) {
         model.addAttribute("id", id);
         model.addAttribute("ticketUpdate", new TicketUpdate());
         return "addComment";
     }
 
     
-    @PostMapping("addComment/{id}")
-    public String addComment(@ModelAttribute TicketUpdate ticketUpdate, Model model, @PathVariable("id") Long id) {
+    @PostMapping("addComment")
+    public String addCommentPost(@ModelAttribute TicketUpdate ticketUpdate, Model model) {
         model.addAttribute("ticketUpdate", ticketUpdate);
         ticketUpdateService.save(ticketUpdate);
         return "redirect:/management";
