@@ -20,8 +20,7 @@ public class TicketUpdateServiceImpl implements TicketUpdateService {
 
     @Override
     public List<TicketUpdate> listTicket() {
-        // TODO Auto-generated method stub
-        return null;
+        return ticketUpdateRepository.findAll();
     }
 
     @Override
@@ -36,9 +35,8 @@ public class TicketUpdateServiceImpl implements TicketUpdateService {
     }
 
     @Override
-    public String delete(int number) {
-        // TODO Auto-generated method stub
-        return null;
+    public String delete(TicketUpdate ticketUpdate) {
+        ticketUpdateRepository.delete(ticketUpdate);
+        return "Comment deleted!";
     }
-
 }

@@ -9,3 +9,13 @@ g
 7src/main/java/com/kagan/movies/models/TicketUpdate.java,e\d\edfee6e42f9ad33583834e30ff4af4a31860ea81
 ]
 -src/main/java/com/kagan/movies/AppConfig.java,9\1\910d8f01dcd7530bb020b3b9def41200a00d5a5e
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+a
+1src/main/java/com/kagan/movies/models/Ticket.java,9\6\9677f0e22181851b56f9f9dda7822304a6e6c345
+t
+Dsrc/main/java/com/kagan/movies/controllers/ManagementController.java,9\a\9a3c5e2716c289f18be53a236815ae2fcaffdf6d
+j
+:src/main/java/com/kagan/movies/services/TicketService.java,e\d\ede7ae82cf636de34df1225942892a6cb3ae6f5f
+p
+@src/main/java/com/kagan/movies/controllers/DeleteController.java,7\b\7bec964630990a458f24b3ea0e5e9b164b942255

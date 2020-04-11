@@ -9,5 +9,5 @@ public interface TicketUpdateService {
     List<TicketUpdate> listTicket();
     TicketUpdate getTicketById(Long id);
     TicketUpdate save(TicketUpdate ticketUpdate);
-    String delete(int number);
+    String delete(TicketUpdate ticketUpdate);
 }

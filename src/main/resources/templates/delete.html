@@ -1,0 +1,32 @@
+<div th:insert="fragments/head.html" xmlns:th="th=http://www.thymeleaf.org" ></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div th:insert="fragments/navbar.html"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="ticket : ${tickets}">
+                    <th scope="row" th:text="${ticket.id}"></th>
+                    <td th:text="${ticket.subject}"></td>
+                    <td><a th:href="@{'/management/delete/' + ${ticket.id}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div th:insert="fragments/end.html"></div>
