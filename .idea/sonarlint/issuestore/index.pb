@@ -19,3 +19,13 @@ j
 :src/main/java/com/kagan/movies/services/TicketService.java,e\d\ede7ae82cf636de34df1225942892a6cb3ae6f5f
 p
 @src/main/java/com/kagan/movies/controllers/DeleteController.java,7\b\7bec964630990a458f24b3ea0e5e9b164b942255
+w
+Gsrc/main/java/com/kagan/movies/repositories/TicketUpdateRepository.java,4\e\4e36ef45de74d5b4a60a8b6c3636e66a929f479b
+n
+>src/main/java/com/kagan/movies/services/TicketServiceImpl.java,2\f\2fe068ebe3e0e49909449194b9affaf897af0efc
+X
+(src/main/resources/templates/delete.html,c\e\cee25e9cefebed9f3fbc130e48a4c67249ac5b58
+p
+@src/main/java/com/kagan/movies/services/TicketUpdateService.java,c\d\cd80f078cdb5056d7b7da090aef1bebfc280cbf7
+t
+Dsrc/main/java/com/kagan/movies/services/TicketUpdateServiceImpl.java,2\8\28838f83837034e95543b2b3e96942cf992cb257

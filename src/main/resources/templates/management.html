@@ -1,34 +1,40 @@
 <div th:insert="fragments/head.html"></div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div th:insert="fragments/navbar.html"></div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Subject</th>
-                            <th scope="col">Details</th>
-                            <th scope="col">Add Comment</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="ticket : ${tickets}">
-                            <th scope="row" th:text="${ticket.id}"></th>
-                            <td th:text="${ticket.subject}"></td>
-                            <td><a th:href="@{'/management/detail/' + ${ticket.id}}"><button type="button" class="btn btn-info" >See Details</button></a></td>
-                            <td><a th:href="@{'/management/addComment/' + ${ticket.id}}"><button type="button" class="btn btn-info">Add Comment</button></a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div th:insert="fragments/navbar.html"></div>
         </div>
     </div>
-    
+
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col"></th>
+                    <th scope="col">Details</th>
+                    <th scope="col">Add Comment</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="ticket : ${tickets}">
+                    <th scope="row" th:text="${ticket.id}"></th>
+                    <td th:text="${ticket.subject}"></td>
+                    <td></td>
+                    <td><a th:href="@{'/management/edit/' + ${ticket.id}}">
+                        <button type="button" class="btn btn-info">See Details</button>
+                    </a></td>
+                    <td><a th:href="@{'/management/addComment/' + ${ticket.id}}">
+                        <button type="button" class="btn btn-success">Add Comment</button>
+                    </a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
 <div th:insert="fragments/end.html"></div>

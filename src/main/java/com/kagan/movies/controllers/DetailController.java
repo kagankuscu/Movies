@@ -14,9 +14,9 @@ public class DetailController {
     @Autowired
     private TicketService ticketService;
 
-    @GetMapping("/management/detail/{id}")
-    public String seeDetail(Model model, @PathVariable("id") Long id) {
+    @GetMapping("/management/edit/{id}")
+    public String seeDetail(Model model, @PathVariable("id") long id) {
         model.addAttribute("ticketDetails", ticketService.getTicketById(id));
-        return "/detail";
+        return "/edit";
     }
 }

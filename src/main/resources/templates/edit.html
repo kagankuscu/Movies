@@ -1,0 +1,49 @@
+<div th:insert="fragments/head.html"></div>
+
+<div class="container">
+    <div th:insert="fragments/navbar.html"></div>
+    <div class="row">
+        <div class="col">
+            <h1 th:text="Details + ' ' + ${ticketDetails.subject}">Details</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col"></div>
+    </div>
+
+    <div class="row" th:if="${not #lists.isEmpty(ticketDetails.number)}">
+        <div class="col">
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col"></th>
+                    <th scope="col">Details</th>
+                    <th scope="col">Add Comment</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="ticketDetail : ${ticketDetails.number}">
+                    <th scope="row" th:text="${ticketDetail.comment}"></th>
+                    <td th:text="${ticketDetails.subject}"></td>
+                    <td></td>
+                    <td><a th:href="@{'/management/edit/' + ${ticket.id}}"><button type="button" class="btn btn-info" >See Details</button></a></td>
+                    <td><a th:href="@{'/management/addComment/' + ${ticket.id}}"><button type="button" class="btn btn-success">Add Comment</button></a></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="row" th:if="${#lists.isEmpty(ticketDetails.number)}">
+        <div class="col">
+            <div class="alert alert-warning">Haven't add any comment yet.</div>
+        </div>
+    </div>
+</div>
+
+<div th:insert="fragments/end.html"></div>
