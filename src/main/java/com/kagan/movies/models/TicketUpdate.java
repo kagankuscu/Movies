@@ -21,20 +21,14 @@ public class TicketUpdate {
     @Column(name = "id")
     private Long id;
 
-    @NotNull
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ticket_id", referencedColumnName = "id")
-    private Ticket number;
-
     @Column(length = 2000)
     private String comment;
 
-    public Ticket getNumber() {
-        return number;
+    public TicketUpdate() {
     }
 
-    public void setNumber(Ticket number) {
-        this.number = number;
+    public TicketUpdate(String comment) {
+        this.comment = comment;
     }
 
     public String getComment() {

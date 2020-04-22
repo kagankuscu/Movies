@@ -47,4 +47,9 @@ public class TicketServiceImpl implements TicketService {
         return ticketRepostory.saveAll(tickets);
     }
 
+    @Override
+    public List<Ticket> findAllActiveUser() {
+        return ticketRepostory.findAllActiveUsers();
+    }
+
 }

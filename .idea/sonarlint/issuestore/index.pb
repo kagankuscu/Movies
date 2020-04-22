@@ -29,3 +29,5 @@ p
 @src/main/java/com/kagan/movies/services/TicketUpdateService.java,c\d\cd80f078cdb5056d7b7da090aef1bebfc280cbf7
 t
 Dsrc/main/java/com/kagan/movies/services/TicketUpdateServiceImpl.java,2\8\28838f83837034e95543b2b3e96942cf992cb257
+q
+Asrc/main/java/com/kagan/movies/repositories/TicketRepository.java,9\b\9bfd3404e942c328ceca2f99716104ac90f277e3
